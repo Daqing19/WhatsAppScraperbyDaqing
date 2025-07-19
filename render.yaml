@@ -1,9 +1,12 @@
+# render.yaml
+
+repo: https://github.com/Daqing19/WhatsappScrapeByDaqing
+branch: main
+
 services:
   - type: web
     name: whatsapp-scraper
     env: docker
     plan: free
     region: oregon
-    branch: main
-    repo: Daqing19/WhatsappScrapeByDaqing
     autoDeploy: true
