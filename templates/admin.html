@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Admin Panel{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5"> <h2 class="mb-4">Admin Panel</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+{{ message }}
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="card mb-4"> <div class="card-body"> <h5 class="card-title">Create New User</h5> <form method="POST" action="{{ url_for('admin') }}"> <div class="row mb-3"> <div class="col"> <input type="text" class="form-control" name="new_username" placeholder="Username" required> </div> <div class="col"> <input type="password" class="form-control" name="new_password" placeholder="Password" required> </div> <div class="col-auto"> <button type="submit" class="btn btn-primary">Add User</button> </div> </div> </form> </div> </div> <h4>Existing Users</h4> <table class="table table-striped"> <thead> <tr> <th>ID</th> <th>Username</th> <th>Devices</th> <th>Action</th> </tr> </thead> <tbody> {% for user in users %} <tr> <td>{{ user.id }}</td> <td>{{ user.username }}</td> <td>{{ user.devices }}</td> <td> {% if user.username != 'daqing' %} <form method="POST" action="{{ url_for('admin') }}" style="display:inline;"> <input type="hidden" name="delete_user" value="{{ user.id }}"> <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete user {{ user.username }}?')">Delete</button> </form> {% else %} <span class="text-muted">Admin</span> {% endif %} </td> </tr> {% endfor %} </tbody> </table> </div> {% endblock %}

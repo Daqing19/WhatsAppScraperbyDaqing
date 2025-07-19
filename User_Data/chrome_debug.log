@@ -1,0 +1,11 @@
+[22992:25820:0717/204842.596:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:202] No machine level policy manager exists.
+[22992:25820:0717/204843.445:INFO:CONSOLE:163] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yn/r/YriGuaOcR5v.js (163)
+[12120:14672:0717/204843.600:WARNING:net\spdy\spdy_session.cc:3054] Received HEADERS for invalid stream 1
+[22992:22160:0717/204859.738:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[22992:25820:0717/204859.973:INFO:CONSOLE:163] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yn/r/YriGuaOcR5v.js (163)
+[22992:25820:0717/204904.117:WARNING:chrome\browser\ui\sad_tab.cc:257] Tab Killed: https://web.whatsapp.com/
+[22992:22160:0717/204919.205:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+[22992:25820:0717/204919.221:ERROR:content\browser\network_service_instance_impl.cc:597] Network service crashed, restarting service.
+[22992:22160:0717/204922.005:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[22992:25820:0717/204924.228:ERROR:content\browser\gpu\gpu_process_host.cc:957] GPU process exited unexpectedly: exit_code=-1073741510
+[22992:25820:0717/204924.228:WARNING:content\browser\gpu\gpu_process_host.cc:1398] The GPU process has crashed 1 time(s)

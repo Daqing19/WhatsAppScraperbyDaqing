@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Welcome, {{ username }}</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm mb-4">
+    <div class="mb-3">
+      <label for="file" class="form-label">Upload .txt File (Phone Numbers)</label>
+      <input type="file" class="form-control" id="file" name="file" accept=".txt" required>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Start Scraping</button>
+  </form>
+
+  <div class="text-center">
+    <p class="mt-3">Progress: <span id="progress-text">Waiting...</span></p>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="{{ url_for('download_csv') }}" class="btn btn-primary mb-2">Download CSV</a>
+    <a href="{{ url_for('download_photos') }}" class="btn btn-secondary">Download Photos</a>
+  </div>
+</div>
+
+<script>
+  function checkProgress() {
+    fetch("/progress")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("progress-text").textContent = data.progress || "N/A";
+      })
+      .catch(error => {
+        document.getElementById("progress-text").textContent = "Error";
+      });
+  }
+
+  setInterval(checkProgress, 3000);
+</script>
+{% endblock %}

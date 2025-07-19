@@ -1,0 +1,23 @@
+2025/07/17-20:48:43.468 6698 Reusing MANIFEST C:\Users\Daqing1\Desktop\WhatsappScrapeByDaqing\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/17-20:48:43.469 6698 Recovering log #130
+2025/07/17-20:48:43.474 6698 Reusing old log C:\Users\Daqing1\Desktop\WhatsappScrapeByDaqing\User_Data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000130.log 
+2025/07/17-20:48:46.772 3c6c Level-0 table #135: started
+2025/07/17-20:48:46.779 3c6c Level-0 table #135: 129525 bytes OK
+2025/07/17-20:48:46.780 3c6c Delete type=0 #130
+2025/07/17-20:48:46.781 6698 Manual compaction at level-0 from '\x006\x00\x00\x00' @ 72057594037927935 : 1 .. '\x007\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/17-20:48:49.492 6698 Compacting 1@1 + 1@2 files
+2025/07/17-20:48:49.571 6698 Generated table #136@1: 40838 keys, 1577463 bytes
+2025/07/17-20:48:49.571 6698 Compacted 1@1 + 1@2 files => 1577463 bytes
+2025/07/17-20:48:49.572 6698 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/07/17-20:48:49.572 6698 Delete type=2 #132
+2025/07/17-20:48:49.572 6698 Delete type=2 #135
+2025/07/17-20:48:52.434 3610 Level-0 table #138: started
+2025/07/17-20:48:52.438 3610 Level-0 table #138: 78592 bytes OK
+2025/07/17-20:48:52.439 3610 Delete type=0 #134
+2025/07/17-20:48:52.439 3610 Manual compaction at level-0 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/17-20:48:54.944 3610 Compacting 1@1 + 1@2 files
+2025/07/17-20:48:55.022 3610 Generated table #139@1: 41182 keys, 1585782 bytes
+2025/07/17-20:48:55.022 3610 Compacted 1@1 + 1@2 files => 1585782 bytes
+2025/07/17-20:48:55.023 3610 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/07/17-20:48:55.023 3610 Delete type=2 #136
+2025/07/17-20:48:55.023 3610 Delete type=2 #138

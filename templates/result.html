@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Result{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-center mb-4">Scraping Result</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <div class="d-grid gap-3">
+        <a href="{{ url_for('download_csv') }}" class="btn btn-success btn-lg">Download CSV</a>
+        <a href="{{ url_for('download_photos') }}" class="btn btn-info btn-lg">Download Profile Pictures</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary btn-lg">Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
