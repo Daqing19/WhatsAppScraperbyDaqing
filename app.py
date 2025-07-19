@@ -203,8 +203,8 @@ def admin():
     c = conn.cursor()
 
     if request.method == 'POST':
-        new_user = request.form.get('new_user')
-        new_pass = request.form.get('new_pass')
+        new_user = request.form.get('new_username')
+        new_pass = request.form.get('new_password')
         if new_user and new_pass:
             try:
                 c.execute("INSERT INTO users (username, password) VALUES (?, ?)",
