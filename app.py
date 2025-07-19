@@ -205,6 +205,8 @@ def admin():
     if request.method == 'POST':
         new_user = request.form.get('new_username')
         new_pass = request.form.get('new_password')
+        delete_user_id = request.form.get('delete_user')
+
         if new_user and new_pass:
             try:
                 c.execute("INSERT INTO users (username, password) VALUES (?, ?)",
@@ -214,7 +216,21 @@ def admin():
             except sqlite3.IntegrityError:
                 flash('Username already exists', 'danger')
 
-    users = c.execute("SELECT id, username FROM users").fetchall()
+        elif delete_user_id:
+            user_to_delete = c.execute("SELECT * FROM users WHERE id = ?", (delete_user_id,)).fetchone()
+            if user_to_delete and user_to_delete['username'] != 'daqing':
+                username = user_to_delete['username']
+                c.execute("DELETE FROM users WHERE id = ?", (delete_user_id,))
+                conn.commit()
+                flash(f"User '{username}' deleted successfully", 'success')
+
+                # Delete folders
+                for folder in [UPLOAD_ROOT, PROFILE_PICS_ROOT, OUTPUT_ROOT]:
+                    path = os.path.join(folder, username)
+                    if os.path.exists(path):
+                        shutil.rmtree(path, ignore_errors=True)
+
+    users = c.execute("SELECT id, username, devices FROM users").fetchall()
     conn.close()
     return render_template('admin.html', users=users)
 
